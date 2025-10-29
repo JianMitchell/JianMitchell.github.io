@@ -1,150 +1,231 @@
-/* Index Styles */
-main {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 40px auto;
-    flex-wrap: wrap;
-}
-
-figure {
-    margin: 0;
-    flex: 0 0 300px;
-}
-
-figure img {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 10px;
-    border: 3px solid #66b3ff;
-    box-shadow: 0 4px 8px rgba(102, 179, 255, 0.3);
-}
-
-#welcome {
-    flex: 1;
-    min-width: 300px;
-    max-width: 600px;
-    text-align: left;
-}
-
-#welcome p {
-    line-height: 1.8;
-    margin-bottom: 20px;
-    font-size: 1.1em;
-}
-
-#welcome em {
-    display: block;
-    text-align: center;
-    font-size: 1.3em;
-    color: #66b3ff;
-    margin-bottom: 30px;
-    font-style: italic;
-}
-
-@media (max-width: 768px) {
-    main {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    figure {
-        flex: 0 0 auto;
-    }
-
-    #welcome {
-        text-align: center;
-    }
-}
-
 /* Global Styles */
 body {
-    background-color: #000033;
-    color: #cccccc;
-    font-family: "Open Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    margin: 0;
-    padding: 20px;
+  background-color: #000033;
+  color: #cccccc;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  padding: 20px;
 }
 
+/* Center all semantic containers */
 header, nav, main, footer {
-    text-align: center;
+  text-align: center;
 }
 
+/* Header Styles */
 h1 {
-    font-family: "Playfair Display", serif;
-    font-weight: 700;
-    color: #ffffff;
-    font-size: 3em;
-    margin-bottom: 10px;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 3em;
+  margin-bottom: 10px;
 }
 
 h2 {
-    color: #66b3ff;
-    font-size: 2em;
-    margin-top: 30px;
+  color: #66b3ff;
+  font-size: 2em;
+  margin-top: 30px;
 }
 
 hr {
-    border: 1px solid #66b3ff;
-    width: 80%;
-    margin: 20px auto;
+  border: 1px solid #66b3ff;
+  width: 80%;
+  margin: 20px auto;
 }
 
+/* Navigation Styles */
 nav {
-    background-color: #001a4d;
-    padding: 15px;
-    margin: 20px auto;
-    border-radius: 8px;
+  background-color: #001a4d;
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 8px;
 }
 
 nav a {
-    color: #66b3ff;
-    text-decoration: none;
-    padding: 10px 20px;
-    margin: 0 10px;
-    display: inline-block;
-    transition: all 0.3s ease;
-    border-radius: 5px;
+  color: #66b3ff;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border-radius: 5px;
 }
 
 nav a:hover {
-    background-color: #66b3ff;
-    color: #000033;
+  background-color: #66b3ff;
+  color: #000033;
 }
 
 nav a.active {
-    background-color: #0066cc;
-    color: #ffffff;
-    font-weight: 600;
+  background-color: #0066cc;
+  color: #ffffff;
+  font-weight: 600;
 }
 
+/* Main Content Layout with Flexbox */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 40px auto;
+  flex-wrap: wrap;
+}
+
+/* Figure and Image */
+figure {
+  margin: 0;
+  flex: 0 0 300px;
+}
+
+figure img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  border: 3px solid #66b3ff;
+  box-shadow: 0 4px 8px rgba(102, 179, 255, 0.3);
+}
+
+/* Welcome Section */
+#welcome {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  text-align: left;
+}
+
+#welcome p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 1.1em;
+}
+
+#welcome em {
+  display: block;
+  text-align: center;
+  font-size: 1.3em;
+  color: #66b3ff;
+  margin-bottom: 30px;
+}
+
+/* About Page Content */
+#content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Table Styles */
+table {
+  margin: 30px auto;
+  border-collapse: collapse;
+  width: 80%;
+  max-width: 700px;
+}
+
+td {
+  padding: 15px;
+  font-size: 1.2em;
+  border: 1px solid #66b3ff;
+}
+
+td strong {
+  color: #66b3ff;
+  font-size: 1.1em;
+}
+
+#table-header {
+  background-color: #0066cc;
+}
+
+#table-header td {
+  color: #ffffff;
+}
+
+.table-row {
+  background-color: #001a4d;
+}
+
+.table-row:hover {
+  background-color: #002966;
+}
+
+/* List Styles */
+ul {
+  list-style-type: disc;
+  text-align: left;
+  margin: 30px auto;
+  width: 80%;
+  max-width: 600px;
+  line-height: 2;
+}
+
+li {
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+.hobby {
+  color: #66b3ff;
+  font-weight: 600;
+}
+
+/* Contact Page */
+iframe {
+  border-radius: 10px;
+  margin: 20px auto;
+  display: block;
+}
+
+/* Footer Styles */
 footer {
-    margin-top: 60px;
-    padding: 30px 20px;
-    background-color: #001a4d;
-    border-top: 2px solid #66b3ff;
-    font-size: 0.9em;
-    color: #99ccff;
+  margin-top: 60px;
+  padding: 30px 20px;
+  background-color: #001a4d;
+  border-top: 2px solid #66b3ff;
+  font-size: 0.9em;
+  color: #99ccff;
 }
 
 footer p {
-    margin: 5px 0;
+  margin: 5px 0;
 }
 
 #csumb-logo {
-    width: 150px;
-    margin-top: 15px;
-    opacity: 0.8;
+  width: 150px;
+  margin-top: 15px;
+  opacity: 0.8;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
-    nav a {
-        display: block;
-        margin: 10px 0;
-    }
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  figure {
+    flex: 0 0 auto;
+  }
+
+  #welcome {
+    text-align: center;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  table {
+    width: 95%;
+  }
+
+  ul {
+    width: 90%;
+  }
 }
