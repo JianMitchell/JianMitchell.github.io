@@ -84,7 +84,7 @@ main {
 }
 
 /* Hero Section - grid layout */
-.hero {
+.figure {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 40px;
@@ -92,14 +92,14 @@ main {
   margin-bottom: 60px;
 }
 
-.hero img {
+.figure img {
   width: 100%;
   max-width: 400px;
   border-radius: 15px;
   transition: transform 0.3s ease;
 }
 
-.hero img:hover {
+.figure img:hover {
   transform: scale(1.05);
 }
 
@@ -379,12 +379,12 @@ footer a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .hero {
+  .figure {
     grid-template-columns: 1fr;
     text-align: center;
   }
 
-  .hero img {
+  .figure img {
     margin: 0 auto;
   }
 
