@@ -3,6 +3,7 @@
 <head>
   <title> Guess a Number </title>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
@@ -10,18 +11,48 @@
   <h1>Guess the Number!</h1>
   <h2>Guess a number between 1 and 99 in seven attempts!</h2>
 </header>
+
 <br>
+
 <div id="main">
-  Enter a guess:
-  <label for="playerGuess"></label><input type="text" id="playerGuess" size="5">
-  <button id="guessBtn"> Guess </button> <br>
-  <button id="resetBtn"> Reset </button>
-  <div id="feedback"></div>
-  <div> Previous Guesses :
-    <span id="guesses"></span>
+  <div id="stats">
+    <div class="stat-box">
+      <span class="stat-label">Wins:</span>
+      <span id="wins" class="stat-value">0</span>
+    </div>
+
+    <div class="stat-box">
+      <span class="stat-label">Losses:</span>
+      <span id="losses" class="stat-value">0</span>
+    </div>
+
+    <div class="stat-box">
+      <span class="stat-label">Attempts Left:</span>
+      <span id="attemptsLeft" class="stat-value">7</span>
+    </div>
+  </div>
+
+  <div id="game">
+    <label for="playerGuess">Enter a guess:</label>
+
+    <input type="text" id="playerGuess" size="5">
+
+    <button id="guessBtn"> Guess</button>
+
+    <br>
+
+    <button id="resetBtn"> Reset</button>
+
+    <div id="feedback"></div>
+
+    <div id="guessHistory">
+      <strong>Previous Guesses :</strong>
+      <span id="guesses"></span>
+    </div>
   </div>
 </div>
 
 <script src="js/script.js"></script>
+
 </body>
 </html>
