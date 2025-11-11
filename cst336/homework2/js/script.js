@@ -149,7 +149,7 @@ function gradeQuiz() {
   }
 
   // Display Total Score
-  let scoreColor = score >= 80 ? "bg-success test-white"
+  let scoreColor = score >= 80 ? "bg-success text-white"
       : "bg-danger text-white";
   document.querySelector(
       "#totalScore").innerHTML = `Total Score: ${score} / 100`;
