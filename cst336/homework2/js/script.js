@@ -148,7 +148,6 @@ function gradeQuiz() {
     wrongAnswer(10);
   }
 
-  // Display Total Score
   let scoreColor = score >= 80 ? "bg-success text-white"
       : "bg-danger text-white";
   document.querySelector(
