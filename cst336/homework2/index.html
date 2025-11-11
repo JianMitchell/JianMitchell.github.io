@@ -8,57 +8,140 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
         crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.7/underscore-umd-min.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="text-center">
-<h1 class="p-5 bg-info">US Geography Quiz</h1>
+<h1 class="p-5 bg-primary text-white">US Geography Quiz</h1>
 
-<!-- First Question -->
-<h3><span id="markImg1"></span>What is the capital of California?</h3>
-<input type="text" id="q1">
-<br><br>
-<div id="q1Feedback"></div>
-<br><br>
+<div class="quiz-container">
+  <!-- Question 1 -->
+  <div class="question-block">
+    <h3><span id="markImg1"></span> 1.What is the capital of California?</h3>
+    <label for="q1"></label>
+    <input type="text" id="q1" class="form-control" placeholder="Enter your answer">
+    <div id="q1Feedback" class="feedback"></div>
+  </div>
 
-<!-- Second Question -->
-<h3><span id="markImg2"></span>Which state is known as the "Sunshine State"?</h3>
-<select id="q2">
-  <option value="">Select One</option>
-  <option value="Mississippi">Mississippi</option>
-  <option value="Missouri">Missouri</option>
-  <option value="Colorado">Colorado</option>
-  <option value="Delaware">Delaware</option>
-</select>
-<br><br>
-<div id="q2Feedback"></div>
-<br><br>
+  <!-- Second Question -->
+  <div class="question-block">
+    <h3><span id="markImg2"></span> 2.Which state is known as the "Sunshine State"?</h3>
+    <label for="q2"></label>
+    <select id="q2" class="form-select">
+      <option value="">Select One</option>
+      <option value="Mississippi">Mississippi</option>
+      <option value="Missouri">Missouri</option>
+      <option value="Colorado">Colorado</option>
+      <option value="Delaware">Delaware</option>
+    </select>
+    <div id="q2Feedback" class="feedback"></div>
+  </div>
 
-<!-- Third Question -->
-<h3><span id="markImg3"></span>What presidents are carved into mount Rushmore?</h3>
-<input type="checkbox" id="Jackson"> <label for="Jackson"> A.Jackson </label>
-<input type="checkbox" id="Franklin"> <label for="Franklin"> B.Franklin </label>
-<input type="checkbox" id="Jefferson"> <label for="Jefferson"> T. Jefferson </label>
-<input type="checkbox" id="Roosevelt"> <label for="Roosevelt"> T. Roosevelt </label>
-<br><br>
-<div id="q3Feedback"></div>
-<br><br>
+  <!-- Third Question -->
+  <div class="question-block">
+    <h3><span id="markImg3"></span> 3.What presidents are carved into mount Rushmore?</h3>
+    <div>
+      <input type="checkbox" id="Jackson">
+      <label for="Jackson"> A.Jackson </label>
+      <br>
+      <input type="checkbox" id="Franklin">
+      <label for="Franklin"> B.Franklin </label>
+      <br>
+      <input type="checkbox" id="Jefferson">
+      <label for="Jefferson"> T. Jefferson </label>
+      <br>
+      <input type="checkbox" id="Roosevelt">
+      <label for="Roosevelt"> T. Roosevelt </label>
+      <br>
+    </div>
+    <div id="q3Feedback" class="feedback"></div>
+  </div>
 
-<!-- Fourth Question -->
-<h3><span id="markImg4"></span>What is the smallest US State?</h3>
-<div id="q4Choices"></div>
-<br><br>
-<div id="q4Feedback"></div>
-<br><br>
+  <!-- Fourth Question -->
+  <div class="question-block">
+    <h3><span id="markImg4"></span> 4.What is the smallest US State?</h3>
+    <div id="q4Choices"></div>
+    <div id="q4Feedback" class="feedback"></div>
+  </div>
 
-<div id="validationFdbk" class="text-danger fw-bold"></div>
+  <!-- Fifth Question -->
+  <div class="question-block">
+    <h3><span id="markImg5"></span> 5.What is the longest river in the United States?</h3>
+    <label for="q5"></label>
+    <input type="text" id="q5" class="form-control" placeholder="Enter river name">
+    <div id="q5Feedback" class="feedback"></div>
+  </div>
+
+  <!-- Sixth Question -->
+  <div class="question-block">
+    <h3><span id="markImg6"></span> 6.Which state has the most national parks?</h3>
+    <label for="q6"></label>
+    <select id="q6" class="form-select">
+      <option value="">Select One</option>
+      <option value="Alaska">Alaska</option>
+      <option value="California">California</option>
+      <option value="Utah">Utah</option>
+      <option value="Colorado">Colorado</option>
+    </select>
+    <div id="q6Feedback" class="feedback"></div>
+  </div>
+
+  <!-- Seventh Question -->
+  <div class="question-block">
+    <h3><span id="markImg7"></span> 7.What is the tallest mountain in North America?</h3>
+    <div id="q7Choices"></div>
+    <div id="q7Feedback" class="feedback"></div>
+  </div>
+
+  <!-- Eighth Question -->
+  <div class="question-block">
+    <h3><span id="markImg8"></span> 8.Which of these are Great Lakes? (Select all that apply)</h3>
+    <div>
+      <input type="checkbox" id="Superior">
+      <label for="Superior">Lake Superior</label>
+      <br>
+      <input type="checkbox" id="Michigan">
+      <label for="Michigan">Lake Michigan</label>
+      <br>
+      <input type="checkbox" id="Tahoe">
+      <label for="Tahoe">Lake Tahoe</label>
+      <br>
+      <input type="checkbox" id="Erie">
+      <label for="Erie">Lake Erie</label>
+      <br>
+      <input type="checkbox" id="Powell">
+      <label for="Powell">Lake Powell</label>
+      <br>
+    </div>
+    <div id="q8Feedback" class="feedback"></div>
+  </div>
+
+  <!-- Ninth Question -->
+  <div class="question-block">
+    <h3><span id="markImg9"></span> 9.What state is the Grand Canyon located in?</h3>
+    <label for="q9"></label>
+    <input type="text" id="q9" class="form-control" placeholder="Enter state name">
+    <div id="q9Feedback" class="feedback"></div>
+  </div>
+
+  <!-- Tenth Question -->
+  <div class="question-block">
+    <h3><span id="markImg10"></span> 10.How many states are in the United States?</h3>
+    <div id="q10Choices"></div>
+    <div id="q10Feedback" class="feedback"></div>
+  </div>
+
+  <div id="validationFdbk" class="text-danger fw-bold"></div>
+  <br>
+  <button class="btn btn-primary">Submit Quiz</button>
+  <br><br>
+  <div id="congratsMsg"></div>
+  <br>
+  <div id="totalScore"></div>
+  <br>
+  <div id="totalAttempts"></div>
+</div>
+
 <br>
-<button class="btn btn-primary">Submit Quiz</button>
-<br><br>
-<div id="totalScore"></div>
-<br>
-<div id="totalAttempts"></div>
-
-<br>
-<hr>
 <footer>
   <p>CST336 Internet Programming. 2025&copy; Mitchell. All rights reserved.</p>
   <p><strong>Disclaimer:</strong> This website is for academic purposes only.</p>
