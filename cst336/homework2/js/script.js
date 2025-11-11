@@ -163,7 +163,6 @@ function gradeQuiz() {
     document.querySelector("#congratsMsg").innerHTML = "";
   }
 
-  // Update and display attempts
   attempts++;
   document.querySelector(
       "#totalAttempts").innerHTML = `Total Times Taken: ${attempts}`;
