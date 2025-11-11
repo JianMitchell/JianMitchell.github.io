@@ -171,58 +171,57 @@ function gradeQuiz() {
 
 function isFormValid() {
   let isValid = true;
+  let validationMessage = "";
 
+  // Validate Question 1
   let q1 = document.querySelector("#q1").value;
   if (q1 === "") {
-    document.querySelector(
-        "#validationFdbk").innerHTML = "Please answer Question 1!<br>";
+    validationMessage += "Please answer Question 1!<br>";
     isValid = false;
   }
 
+  // Validate Question 2
   let q2 = document.querySelector("#q2").value;
   if (q2 === "") {
-    document.querySelector(
-        "#validationFdbk").innerHTML = "Please answer Question 2!<br>";
+    validationMessage += "Please answer Question 2!<br>";
     isValid = false;
   }
 
+  // Validate Question 3
   let q3Checked = document.querySelector("#Jackson").checked ||
       document.querySelector("#Franklin").checked ||
       document.querySelector("#Jefferson").checked ||
       document.querySelector("#Roosevelt").checked;
   if (!q3Checked) {
-    document.querySelector(
-        "#validationFdbk").innerHTML = "Please answer Question 3!<br>";
+    validationMessage += "Please answer Question 3!<br>";
     isValid = false;
   }
 
+  // Validate Question 4
   let q4Checked = document.querySelector("input[name=q4]:checked");
   if (!q4Checked) {
-    document.querySelector(
-        "#validationFdbk").innerHTML = "Please answer Question 4!<br>"
+    validationMessage += "Please answer Question 4!<br>";
     isValid = false;
   }
 
+  // Validate Question 5
   let q5 = document.querySelector("#q5").value;
   if (q5 === "") {
-    document.querySelector(
-        "#validationFdbk").innerHTML = "Please answer Question 5!<br>"
+    validationMessage += "Please answer Question 5!<br>";
     isValid = false;
   }
 
   // Validate Question 6
   let q6 = document.querySelector("#q6").value;
   if (q6 === "") {
-    document.querySelector(
-        "#validationFdbk").innerHTML = "Please answer Question 6!<br>"
+    validationMessage += "Please answer Question 6!<br>";
     isValid = false;
   }
 
   // Validate Question 7
   let q7Checked = document.querySelector("input[name=q7]:checked");
   if (!q7Checked) {
-    document.querySelector(
-        "#validationFdbk").innerHTML = "Please answer Question 7!<br>"
+    validationMessage += "Please answer Question 7!<br>";
     isValid = false;
   }
 
@@ -233,25 +232,26 @@ function isFormValid() {
       document.querySelector("#Erie").checked ||
       document.querySelector("#Powell").checked;
   if (!q8Checked) {
-    document.querySelector(
-        "#validationFdbk").innerHTML = "Please answer Question 8!<br>"
+    validationMessage += "Please answer Question 8!<br>";
     isValid = false;
   }
 
   // Validate Question 9
   let q9 = document.querySelector("#q9").value;
   if (q9 === "") {
-    document.querySelector(
-        "#validationFdbk").innerHTML = "Please answer Question 9!<br>"
+    validationMessage += "Please answer Question 9!<br>";
     isValid = false;
   }
 
   // Validate Question 10
   let q10Checked = document.querySelector("input[name=q10]:checked");
   if (!q10Checked) {
-    document.querySelector(
-        "#validationFdbk").innerHTML = "Please answer Question 10!<br>"
+    validationMessage += "Please answer Question 10!<br>";
     isValid = false;
+  }
+
+  if (!isValid) {
+    document.querySelector("#validationFdbk").innerHTML = validationMessage;
   }
 
   return isValid;
@@ -259,7 +259,8 @@ function isFormValid() {
 
 function rightAnswer(index) {
   document.querySelector(`#q${index}Feedback`).innerHTML = "Correct!";
-  document.querySelector(`#q${index}Feedback`).className = "bg-success text-white";
+  document.querySelector(
+      `#q${index}Feedback`).className = "bg-success text-white";
   document.querySelector(
       `#markImg${index}`).innerHTML = `<img src="img/checkmark.png" alt="checkmark">`;
   score += 10;
@@ -267,7 +268,8 @@ function rightAnswer(index) {
 
 function wrongAnswer(index) {
   document.querySelector(`#q${index}Feedback`).innerHTML = "Incorrect";
-  document.querySelector(`#q${index}Feedback`).className = "bg-danger text-white";
+  document.querySelector(
+      `#q${index}Feedback`).className = "bg-danger text-white";
   document.querySelector(
       `#markImg${index}`).innerHTML = `<img src="img/xmark.png" alt="xmark">`;
 }
