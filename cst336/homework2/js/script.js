@@ -67,7 +67,7 @@ function gradeQuiz() {
 
   // Grade Question 2
   let q2Response = document.querySelector("#q2").value;
-  if (q2Response === "Mississippi") {
+  if (q2Response === "missouri") {
     rightAnswer(2);
   } else {
     wrongAnswer(2);
@@ -96,7 +96,7 @@ function gradeQuiz() {
 
   // Grade Question 5
   let q5Response = document.querySelector("#q5").value.toLowerCase();
-  if (q5Response === "missouri" || q5Response === "missouri river") {
+  if (q5Response === "florida") {
     rightAnswer(5);
   } else {
     wrongAnswer(5);
