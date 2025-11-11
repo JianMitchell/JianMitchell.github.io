@@ -155,7 +155,7 @@ function gradeQuiz() {
       "#totalScore").innerHTML = `Total Score: ${score} / 100`;
   document.querySelector("#totalScore").className = scoreColor;
 
-  if (score >= 80) {
+  if (score > 80) {
     document.querySelector(
         "#congratsMsg").innerHTML = "Congratulations! Excellent work!";
     document.querySelector("#congratsMsg").className = "bg-warning";
