@@ -66,7 +66,7 @@ function gradeQuiz() {
   }
 
   // Grade Question 2
-  let q2Response = document.querySelector("#q2").value;
+  let q2Response = document.querySelector("#q2").value.toLowerCase();
   if (q2Response === "missouri") {
     rightAnswer(2);
   } else {
