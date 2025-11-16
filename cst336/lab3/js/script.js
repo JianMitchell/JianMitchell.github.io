@@ -102,10 +102,10 @@ async function checkUsername() {
   let usernameError = document.querySelector("#usernameError");
 
   if (data.available) {
-    usernameError.textContent = "✓ Username is available!";
+    usernameError.textContent = "Username is available!";
     usernameError.className = "success";
   } else {
-    usernameError.textContent = "✗ Username is already taken!";
+    usernameError.textContent = "Username is already taken!";
     usernameError.className = "error";
   }
 }
@@ -143,13 +143,13 @@ function validateForm(e) {
   }
 
   if (password.length < 6) {
-    passwordError.textContent = "✗ Password must be at least 6 characters!";
+    passwordError.textContent = "Password must be at least 6 characters!";
     passwordError.className = "error";
     return false;
   }
 
   if (password !== password2) {
-    passwordError.textContent = "✗ Passwords do not match!";
+    passwordError.textContent = "Passwords do not match!";
     passwordError.className = "error";
     return false;
   }
