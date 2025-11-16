@@ -1,10 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Sign Up Page</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+<h1>Sign Up</h1>
 
+<form id="signupForm" action="welcome.html" method="GET">
+  <label for="fName">First Name:</label>
+  <input type="text" id="fName" name="fName" required><br>
+
+  <label for="lName">Last Name:</label>
+  <input type="text" id="lName" name="lName" required><br>
+
+  <label>Gender:</label>
+  <div style="display: inline-block;">
+    <input type="radio" id="male" name="gender" value="m"
+           style="display: inline; width: auto; margin-right: 5px;">
+    <label for="male" style="display: inline; margin-right: 20px;">Male</label>
+    <input type="radio" id="female" name="gender" value="f"
+           style="display: inline; width: auto; margin-right: 5px;">
+    <label for="female" style="display: inline;">Female</label>
+  </div>
+  <br><br>
+
+  <label for="zip">Zip Code:</label>
+  <input type="text" id="zip" name="zip"><br>
+  <span id="zipError"></span>
+
+  <label for="city">City:</label>
+  <span id="city" class="info"></span><br>
+
+  <label for="latitude">Latitude:</label>
+  <span id="latitude" class="info"></span><br>
+
+  <label for="longitude">Longitude:</label>
+  <span id="longitude" class="info"></span><br><br>
+
+  <label for="state">State:</label>
+  <select id="state" name="state">
+    <option>Loading states...</option>
+  </select><br>
+
+  <label for="county">Select a County:</label>
+  <select id="county" name="county"></select><br><br>
+
+  <label for="username">Desired Username:</label>
+  <input type="text" id="username" name="username"><br>
+  <span id="usernameError"></span><br>
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password">
+  <span id="suggestedPwd"></span><br>
+
+  <label for="password2">Type Password Again:</label>
+  <input type="password" id="password2"><br>
+  <span id="passwordError"></span><br>
+
+  <input type="submit" value="Sign up!">
+</form>
+
+<footer>
+  <p>CST336 Internet Programming. 2025&copy; Mitchell. All rights reserved.</p>
+  <p><strong>Disclaimer:</strong> This website is for academic purposes only.</p>
+  <img src="img/csumblogo-2.png" alt="CSUMB Logo" id="csumb-logo">
+</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>
