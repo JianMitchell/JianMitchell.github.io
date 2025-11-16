@@ -9,7 +9,7 @@ async function loadStates() {
 
     console.log("States loaded:", data);
 
-    let stateDropdown = document.getElementById("state");
+    let stateDropdown = document.querySelector("#state");
     stateDropdown.innerHTML = '<option>Select One</option>';
 
     if (data && data.length > 0) {
@@ -24,10 +24,10 @@ async function loadStates() {
   }
 }
 
-document.getElementById("zip").addEventListener("change", displayCity);
+document.querySelector("#zip").addEventListener("change", displayCity);
 
 async function displayCity() {
-  let zipCode = document.getElementById("zip").value;
+  let zipCode = document.querySelector("#zip").value;
   let url = `https://csumb.space/api/cityInfoAPI.php?zip=${zipCode}`;
 
   let response = await fetch(url);
@@ -35,27 +35,27 @@ async function displayCity() {
 
   console.log(data);
 
-  let zipError = document.getElementById("zipError");
+  let zipError = document.querySelector("#zipError");
 
   if (data.city) {
-    document.getElementById("city").textContent = data.city;
-    document.getElementById("latitude").textContent = data.latitude;
-    document.getElementById("longitude").textContent = data.longitude;
+    document.querySelector("#city").textContent = data.city;
+    document.querySelector("#latitude").textContent = data.latitude;
+    document.querySelector("#longitude").textContent = data.longitude;
     zipError.textContent = "";
   } else {
-    document.getElementById("city").textContent = "";
-    document.getElementById("latitude").textContent = "";
-    document.getElementById("longitude").textContent = "";
+    document.querySelector("#city").textContent = "";
+    document.querySelector("#latitude").textContent = "";
+    document.querySelector("#longitude").textContent = "";
     zipError.textContent = "Zip code not found";
     zipError.className = "error";
   }
 }
 
-document.getElementById("state").addEventListener("change", displayCounties);
+document.querySelector("#state").addEventListener("change", displayCounties);
 
 async function displayCounties() {
   try {
-    let state = document.getElementById("state").value;
+    let state = document.querySelector("#state").value;
 
     if (state === "Select One" || !state) {
       return;
@@ -68,7 +68,7 @@ async function displayCounties() {
 
     console.log("Counties data:", data);
 
-    let countyList = document.getElementById("county");
+    let countyList = document.querySelector("#county");
     countyList.innerHTML = '<option>Select a County</option>';
 
     if (data && data.length > 0) {
@@ -83,15 +83,15 @@ async function displayCounties() {
     }
   } catch (error) {
     console.error("Error loading counties:", error);
-    let countyList = document.getElementById("county");
+    let countyList = document.querySelector("#county");
     countyList.innerHTML = '<option>Error loading counties</option>';
   }
 }
 
-document.getElementById("username").addEventListener("change", checkUsername);
+document.querySelector("#username").addEventListener("change", checkUsername);
 
 async function checkUsername() {
-  let username = document.getElementById("username").value;
+  let username = document.querySelector("#username").value;
   let url = `https://csumb.space/api/usernamesAPI.php?username=${username}`;
 
   let response = await fetch(url);
@@ -99,7 +99,7 @@ async function checkUsername() {
 
   console.log(data);
 
-  let usernameError = document.getElementById("usernameError");
+  let usernameError = document.querySelector("#usernameError");
 
   if (data.available) {
     usernameError.textContent = "✓ Username is available!";
@@ -110,7 +110,7 @@ async function checkUsername() {
   }
 }
 
-document.getElementById("password").addEventListener("focus", suggestPassword);
+document.querySelector("#password").addEventListener("focus", suggestPassword);
 
 async function suggestPassword() {
   let url = `https://csumb.space/api/suggestedPassword.php?length=8`;
@@ -120,20 +120,20 @@ async function suggestPassword() {
 
   console.log("Suggested password:", data);
 
-  let suggestedPwd = document.getElementById("suggestedPwd");
+  let suggestedPwd = document.querySelector("#suggestedPwd");
   suggestedPwd.textContent = `Suggested: ${data.password}`;
   suggestedPwd.className = "info";
 }
 
-document.getElementById("signupForm").addEventListener("submit", validateForm);
+document.querySelector("#signupForm").addEventListener("submit", validateForm);
 
 function validateForm(e) {
   e.preventDefault();
 
-  let username = document.getElementById("username").value;
-  let password = document.getElementById("password").value;
-  let password2 = document.getElementById("password2").value;
-  let passwordError = document.getElementById("passwordError");
+  let username = document.querySelector("#username").value;
+  let password = document.querySelector("#password").value;
+  let password2 = document.querySelector("#password2").value;
+  let passwordError = document.querySelector("#passwordError");
 
   passwordError.textContent = "";
 
