@@ -15,15 +15,12 @@
   <input type="text" id="lName" name="lName" required><br>
 
   <label>Gender:</label>
-  <div style="display: inline-block;">
-    <input type="radio" id="male" name="gender" value="m"
-           style="display: inline; width: auto; margin-right: 5px;">
-    <label for="male" style="display: inline; margin-right: 20px;">Male</label>
-    <input type="radio" id="female" name="gender" value="f"
-           style="display: inline; width: auto; margin-right: 5px;">
-    <label for="female" style="display: inline;">Female</label>
-  </div>
-  <br><br>
+  <div class="gender-container">
+    <input type="radio" id="male" name="gender" value="m" class="gender-radio">
+    <label for="male" class="gender-label">Male</label>
+    <input type="radio" id="female" name="gender" value="f" class="gender-radio">
+    <label for="female" class="gender-label-last">Female</label>
+  </div><br><br>
 
   <label for="zip">Zip Code:</label>
   <input type="text" id="zip" name="zip"><br>
