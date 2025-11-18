@@ -2,9 +2,79 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Weather Lookup</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+<div class="container">
+  <header>
+    <h1>Weather Lookup</h1>
+    <p class="subtitle">Get current weather information for any city</p>
+  </header>
 
+  <div class="form-container">
+    <form id="weatherForm">
+      <div class="form-group">
+        <label for="cityInput">Enter City Name:</label>
+        <input
+            type="text"
+            id="cityInput"
+            placeholder="e.g., London, Tokyo, New York"
+            required
+        >
+        <span class="error-message" id="errorMessage"></span>
+      </div>
+      <button type="submit" class="btn-submit">Get Weather</button>
+    </form>
+  </div>
+
+  <div id="loadingIndicator" class="loading hidden">
+    <div class="spinner"></div>
+    <p>Fetching weather data...</p>
+  </div>
+
+  <div id="weatherDisplay" class="weather-display hidden">
+    <div class="weather-header">
+      <h2 id="cityName"></h2>
+      <p id="weatherDate"></p>
+    </div>
+
+    <div class="weather-main">
+      <div class="temperature-section">
+        <span id="weatherIcon"></span>
+        <div class="temperature">
+          <span id="temp"></span>
+          <span class="unit">°C</span>
+        </div>
+      </div>
+      <p id="weatherDescription"></p>
+    </div>
+
+    <div class="weather-details">
+      <div class="detail-item">
+        <span class="detail-label">Feels Like</span>
+        <span id="feelsLike" class="detail-value"></span>
+      </div>
+      <div class="detail-item">
+        <span class="detail-label">Humidity</span>
+        <span id="humidity" class="detail-value"></span>
+      </div>
+      <div class="detail-item">
+        <span class="detail-label">Wind Speed</span>
+        <span id="windSpeed" class="detail-value"></span>
+      </div>
+      <div class="detail-item">
+        <span class="detail-label">Pressure</span>
+        <span id="pressure" class="detail-value"></span>
+      </div>
+    </div>
+  </div>
+
+  <div id="errorDisplay" class="error-display hidden">
+    <p id="errorText"></p>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
 </body>
 </html>
