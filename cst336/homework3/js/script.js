@@ -100,11 +100,11 @@ async function fetchWeatherData(cityName) {
 
     if (!response.ok) {
       if (response.status === 404) {
-        displayError("City not found. Please check the spelling and try again.");
+        displayError("City not found");
       } else if (response.status === 401) {
-        displayError("API key error. Please contact support.");
+        displayError("API key error");
       } else {
-        displayError("Failed to fetch weather data. Please try again later.");
+        displayError("Failed to fetch weather data");
       }
       return;
     }
@@ -113,7 +113,7 @@ async function fetchWeatherData(cityName) {
 
   } catch (error) {
     console.error("Error fetching weather:", error);
-    displayError("Network error. Please check your connection and try again.");
+    displayError("Network error");
   } finally {
     document.querySelector("#loadingIndicator").className = "loading hidden";
   }
