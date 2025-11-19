@@ -1,12 +1,12 @@
-import _ from 'underscore';
+import express from 'express';
+const app = express();
+app.set("view engine", "ejs");
+app.use(express.static("public"));
 
-let vowels = ["a", "e", "i", "o", "u"];
-vowels = _.shuffle(vowels);
+app.get('/', (req, res) => {
+  res.send('Hello Express app!')
+});
 
-displayVowels();
-
-function displayVowels() {
-  for (let vowel of vowels) {
-    console.log(vowel);
-  }
-}
+app.listen(3000, () => {
+  console.log('server started');
+});
