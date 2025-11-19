@@ -7,8 +7,6 @@ app.get('/', (req, res) => {
   res.send('Hello Express app!')
 });
 
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-  console.log(`server started`);
+app.listen(3000, () => {
+  console.log('server started');
 });
