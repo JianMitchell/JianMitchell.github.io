@@ -1,0 +1,44 @@
+<%- include('partials/head.ejs') %>
+
+<div class="planet-detail">
+    <h2><%= planetName %></h2>
+
+    <div class="planet-info-container">
+        <div class="planet-image">
+            <img src="<%= planetInfo.image %>" alt="<%= planetName %>">
+        </div>
+
+        <div class="planet-details">
+            <h3>About <%= planetName %></h3>
+            <p class="description"><%= planetInfo.description %></p>
+
+            <div class="planet-stats">
+                <% if (planetInfo.moons !== undefined) { %>
+                    <div class="stat">
+                        <strong>Moons:</strong> <%= planetInfo.moons %>
+                    </div>
+                <% } %>
+
+                <% if (planetInfo.distanceFromSun) { %>
+                    <div class="stat">
+                        <strong>Distance from Sun:</strong> <%= planetInfo.distanceFromSun %>
+                    </div>
+                <% } %>
+
+                <% if (planetInfo.yearLength) { %>
+                    <div class="stat">
+                        <strong>Year Length:</strong> <%= planetInfo.yearLength %>
+                    </div>
+                <% } %>
+
+                <% if (planetInfo.diameter) { %>
+                    <div class="stat">
+                        <strong>Diameter:</strong> <%= planetInfo.diameter %>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer.ejs') %>
