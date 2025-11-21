@@ -4,6 +4,11 @@ import fetch from 'node-fetch';
 const app = express();
 const planets =  (await import ('npm-solarsystem')).default;
 
+const fixedImages = {
+  mars: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Mars_-_August_30_2021_-_Flickr_-_Kevin_M._Gill.png/960px-Mars_-_August_30_2021_-_Flickr_-_Kevin_M._Gill.png",
+  jupiter: "https://upload.wikimedia.org/wikipedia/commons/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg"
+};
+
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
@@ -52,11 +57,13 @@ app.get('/earth', (req, res) => {
 
 app.get('/mars', (req, res) =>  {
   let planetInfo = planets.getMars();
+  planetInfo.image = fixedImages.mars;
   res.render('planet', {planetInfo, planetName: 'Mars'});
 });
 
 app.get('/jupiter', (req, res) => {
   let planetInfo = planets.getJupiter();
+  planetInfo.image = fixedImages.jupiter;
   res.render('planet', {planetInfo, planetName: 'Jupiter'});
 });
 
