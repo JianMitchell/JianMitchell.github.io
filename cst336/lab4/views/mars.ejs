@@ -8,48 +8,53 @@
             <img src="<%= planetInfo.image %>" alt="Mars">
         </div>
 
-        <div class="planet-stats">
-            <% if (planetInfo.moons !== undefined) { %>
-                <div class="stat">
-                    <strong>Moons:</strong> <%= planetInfo.moons %>
-                </div>
-            <% } %>
+        <div class="planet-details">
+            <h3>About Mars</h3>
+            <p class="description"><%= planetInfo.description %></p>
 
-            <% if (planetInfo.distanceFromSun) { %>
-                <div class="stat">
-                    <strong>Distance from Sun:</strong> <%= planetInfo.distanceFromSun %>
-                </div>
-            <% } %>
+            <div class="planet-stats">
+                <% if (planetInfo.moons !== undefined) { %>
+                    <div class="stat">
+                        <strong>Moons:</strong> <%= planetInfo.moons %>
+                    </div>
+                <% } %>
 
-            <% if (planetInfo.yearLength) { %>
-                <div class="stat">
-                    <strong>Year Length:</strong> <%= planetInfo.yearLength %>
-                </div>
-            <% } %>
+                <% if (planetInfo.distanceFromSun) { %>
+                    <div class="stat">
+                        <strong>Distance from Sun:</strong> <%= planetInfo.distanceFromSun %>
+                    </div>
+                <% } %>
 
-            <% if (planetInfo.oneEarthDay) { %>
-                <div class="stat">
-                    <strong>oneEarthDay:</strong> <%= planetInfo.oneEarthDay %>
-                </div>
-            <% } %>
+                <% if (planetInfo.yearLength) { %>
+                    <div class="stat">
+                        <strong>Year Length:</strong> <%= planetInfo.yearLength %>
+                    </div>
+                <% } %>
 
-            <% if (planetInfo.radius) { %>
-                <div class="stat">
-                    <strong>Diameter:</strong> <%= planetInfo.radius * 2 %>
-                </div>
-            <% } %>
+                <% if (planetInfo.oneEarthDay) { %>
+                    <div class="stat">
+                        <strong>oneEarthDay:</strong> <%= planetInfo.oneEarthDay %>
+                    </div>
+                <% } %>
 
-            <% if (planetInfo.radius) { %>
-                <div class="stat">
-                    <strong>Radius:</strong> <%= planetInfo.radius %>
-                </div>
-            <% } %>
+                <% if (planetInfo.radius) { %>
+                    <div class="stat">
+                        <strong>Diameter:</strong> <%= planetInfo.radius * 2 %>
+                    </div>
+                <% } %>
 
-            <% if (planetInfo.websiteLink) { %>
-                <div class="stat">
-                    <strong>websiteLink:</strong> <%= planetInfo.websiteLink %>
-                </div>
-            <% } %>
+                <% if (planetInfo.radius) { %>
+                    <div class="stat">
+                        <strong>Radius:</strong> <%= planetInfo.radius %>
+                    </div>
+                <% } %>
+
+                <% if (planetInfo.websiteLink) { %>
+                    <div class="stat">
+                        <strong>websiteLink:</strong> <%= planetInfo.websiteLink %>
+                    </div>
+                <% } %>
+            </div>
         </div>
     </div>
 </div>
