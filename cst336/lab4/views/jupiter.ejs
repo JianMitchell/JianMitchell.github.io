@@ -1,15 +1,15 @@
 <%- include('partials/head.ejs') %>
 
 <div class="planet-detail">
-    <h2><%= planetName %></h2>
+    <h2>Jupiter</h2>
 
     <div class="planet-info-container">
         <div class="planet-image">
-            <img src="<%= planetInfo.image %>" alt="<%= planetName %>">
+            <img src="<%= planetInfo.image %>" alt="Jupiter">
         </div>
 
         <div class="planet-details">
-            <h3>About <%= planetName %></h3>
+            <h3>About Jupiter</h3>
             <p class="description"><%= planetInfo.description %></p>
 
             <div class="planet-stats">
@@ -31,14 +31,31 @@
                     </div>
                 <% } %>
 
-                <% if (planetInfo.diameter) { %>
+                <% if (planetInfo.oneEarthDay) { %>
                     <div class="stat">
-                        <strong>Diameter:</strong> <%= planetInfo.diameter %>
+                        <strong>oneEarthDay:</strong> <%= planetInfo.oneEarthDay %>
+                    </div>
+                <% } %>
+
+                <% if (planetInfo.radius) { %>
+                    <div class="stat">
+                        <strong>Diameter:</strong> <%= planetInfo.radius * 2 %>
+                    </div>
+                <% } %>
+
+                <% if (planetInfo.radius) { %>
+                    <div class="stat">
+                        <strong>Radius:</strong> <%= planetInfo.radius %>
+                    </div>
+                <% } %>
+
+                <% if (planetInfo.websiteLink) { %>
+                    <div class="stat">
+                        <strong>websiteLink:</strong> <%= planetInfo.websiteLink %>
                     </div>
                 <% } %>
             </div>
         </div>
     </div>
-</div>
 
 <%- include('partials/footer.ejs') %>

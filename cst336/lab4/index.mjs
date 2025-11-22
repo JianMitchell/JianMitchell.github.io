@@ -42,44 +42,44 @@ app.get('/nasa', async (req, res) => {
 
 app.get('/mercury',  (req, res) => {
   let planetInfo = planets.getMercury();
-  res.render('planet', {planetInfo, planetName: 'Mercury'});
+  res.render('mercury', {planetInfo});
 });
 
 app.get('/venus', (req, res) => {
   let planetInfo = planets.getVenus();
-  res.render('planet', {planetInfo, planetName: 'Venus'});
+  res.render('venus', {planetInfo});
 });
 
 app.get('/earth', (req, res) => {
   let planetInfo = planets.getEarth();
-  res.render('planet', {planetInfo, planetName: 'Earth'});
+  res.render('earth', {planetInfo});
 });
 
 app.get('/mars', (req, res) =>  {
   let planetInfo = planets.getMars();
   planetInfo.image = fixedImages.mars;
-  res.render('planet', {planetInfo, planetName: 'Mars'});
+  res.render('mars', {planetInfo});
 });
 
 app.get('/jupiter', (req, res) => {
   let planetInfo = planets.getJupiter();
   planetInfo.image = fixedImages.jupiter;
-  res.render('planet', {planetInfo, planetName: 'Jupiter'});
+  res.render('jupiter', {planetInfo});
 });
 
 app.get('/saturn', (req, res) => {
   let planetInfo = planets.getSaturn();
-  res.render('planet', {planetInfo, planetName: 'saturn'});
+  res.render('saturn', {planetInfo});
 });
 
 app.get('/uranus', (req, res) => {
   let planetInfo = planets.getUranus();
-  res.render('planet', {planetInfo, planetName: 'Uranus'});
+  res.render('uranus', {planetInfo});
 });
 
 app.get('/neptune', (req, res) => {
   let planetInfo = planets.getNeptune();
-  res.render('planet', {planetInfo, planetName: 'Neptune'});
+  res.render('neptune', {planetInfo});
 });
 
 app.listen(3000, () => {

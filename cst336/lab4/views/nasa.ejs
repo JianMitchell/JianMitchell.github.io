@@ -1,0 +1,39 @@
+<%- include('partials/head.ejs') %>
+
+<div class="nasa-pod">
+    <h2>NASA's Picture of the Day</h2>
+
+    <% if (nasaData) { %>
+        <div class="pod-container">
+            <h3><%= nasaData.title %></h3>
+            <p class="date"><strong>Date:</strong> <%= nasaData.date %></p>
+
+            <div class="pod-media">
+                <% if (nasaData.media_type === 'image') { %>
+                    <img src="<%= nasaData.url %>" alt="<%= nasaData.title %>">
+                <% } else if (nasaData.media_type === 'video') { %>
+                    <iframe src="<%= nasaData.url %>" allowfullscreen></iframe>
+                <% } %>
+            </div>
+
+            <div class="pod-explanation">
+                <h4>Explanation:</h4>
+                <p><%= nasaData.explanation %></p>
+            </div>
+
+            <% if (nasaData.copyright) { %>
+                <p class="copyright"><strong>Copyright:</strong> <%= nasaData.copyright %></p>
+            <% } %>
+
+            <% if (nasaData.hdurl) { %>
+                <a href="<%= nasaData.hdurl %>" target="_blank" class="hd-link">View HD Version</a>
+            <% } %>
+        </div>
+    <% } else { %>
+        <div class="error-message">
+            <p>Sorry, we couldn't fetch today's NASA Picture of the Day. Please try again later.</p>
+        </div>
+    <% } %>
+</div>
+
+<%- include('partials/footer.ejs') %>
