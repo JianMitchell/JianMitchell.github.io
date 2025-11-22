@@ -6,7 +6,8 @@ const planets =  (await import ('npm-solarsystem')).default;
 
 const fixedImages = {
   mars: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Mars_-_August_30_2021_-_Flickr_-_Kevin_M._Gill.png/960px-Mars_-_August_30_2021_-_Flickr_-_Kevin_M._Gill.png",
-  jupiter: "https://upload.wikimedia.org/wikipedia/commons/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg"
+  jupiter: "https://upload.wikimedia.org/wikipedia/commons/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg",
+  pluto: "https://upload.wikimedia.org/wikipedia/commons/e/ef/Pluto_in_True_Color_-_High-Res.jpg"
 };
 
 app.set("view engine", "ejs");
@@ -80,6 +81,12 @@ app.get('/uranus', (req, res) => {
 app.get('/neptune', (req, res) => {
   let planetInfo = planets.getNeptune();
   res.render('neptune', {planetInfo});
+});
+
+app.get('/pluto', (req, res) => {
+  let planetInfo = planets.getPluto();
+  planetInfo.image = fixedImages.pluto;
+  res.render('pluto', {planetInfo});
 });
 
 app.listen(3000, () => {

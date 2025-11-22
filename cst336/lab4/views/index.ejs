@@ -1,27 +1,25 @@
-<%- include('partials/head.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs') %>
+</head>
+
+<body>
+<header>
+    <h1>The Solar System</h1>
+    <%- include('partials/nav.ejs') %>
+</header>
+<main>
 
 <div class="content" style="background-image: url('<%= image %>');">
     <div class="overlay">
         <h2>Solar System</h2>
         <p>Explore the solar system! Click on any planet in the navigation to learn more about it.</p>
-
-        <div class="planet-grid">
-            <div class="planet-card">
-                <h3>8 planets</h3>
-                <p>Mercury - Neptune</p>
-            </div>
-
-            <div class="planet-card">
-                <h3>The center of the solar system</h3>
-                <p>The Sun</p>
-            </div>
-
-            <div class="planet-card">
-                <h3>Learn More</h3>
-                <p>Explore more facts</p>
-            </div>
-        </div>
     </div>
 </div>
 
 <%- include('partials/footer.ejs') %>
+
+</main>
+</body>
+</html>
