@@ -34,6 +34,19 @@ app.get('/nasa', async (req, res) => {
     let url = `https://api.nasa.gov/planetary/apod?api_key=${nasaApiKey}&date=${today}`;
     let response = await fetch(url);
     let data = await response.json();
+    console.log("fetching data:",data);
+
+    // To fix empty space in NASA POD
+    if (data.code === 404) {
+      let yesterday = new Date();
+      yesterday.setDate(yesterday.getDate() - 1);
+      let yesterdayDate = yesterday.toISOString().split('T')[0];
+      let yesterdayUrl = `https://api.nasa.gov/planetary/apod?api_key=${nasaApiKey}&date=${yesterdayDate}`;
+      let yesterdayResponse = await fetch(yesterdayUrl);
+      data = await yesterdayResponse.json();
+      console.log("fetching data:",data);
+    }
+
     res.render("nasa", {nasaData: data });
   } catch (error) {
     console.error("Error fetching NASA data:",  error);

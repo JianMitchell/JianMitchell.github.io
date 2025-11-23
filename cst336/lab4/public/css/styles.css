@@ -104,7 +104,6 @@ main {
   border-radius: 15px;
   margin-top: 40px;
   text-align: left;
-  backdrop-filter: blur(10px);
 }
 
 .info-section h3 {
@@ -126,7 +125,6 @@ main {
   background: rgba(0, 0, 0, 0.7);
   padding: 30px;
   border-radius: 15px;
-  backdrop-filter: blur(10px);
 }
 
 .planet-detail h2 {
@@ -181,7 +179,6 @@ main {
   background: rgba(0, 0, 0, 0.7);
   padding: 30px;
   border-radius: 15px;
-  backdrop-filter: blur(10px);
 }
 
 .nasa-pod h2 {
