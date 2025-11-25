@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head.ejs') %>
+
+<body>
+<header>
+    <h1>Software Development Life Cycle</h1>
+    <hr>
+
+    <%- include('partials/nav.ejs') %>
+</header>
+
+<main>
+    <section class="content-section">
+        <h2>The Waterfall Methodology</h2>
+
+        <img src="/img/waterfall-methodology.png" alt="Detailed waterfall model diagram">
+
+        <article class="two-column">
+            <h3>Overview</h3>
+            <p>
+                The Waterfall methodology is one of the earliest approaches that was structured for
+                software
+                development. Basically, the methodology was introduced by Winston Royce in 1970 to
+                design
+                software through a model that followed a linear and sequential process. Furthermore,
+                it was made in relation to a cascading waterfall where it flowed in distinct phases
+                downwards.
+            </p>
+
+            <p>
+                Each phase within the Waterfall model was required to be accomplished before the
+                next
+                phase began. Therefore, making the structure rigid in that it prevented minimal
+                overlap
+                between stages, providing well-defined requirements and minimal changes to projects
+                that
+                emphasized comprehensive documentation at each stage, thus creating a clear trail of
+                the
+                development process.
+            </p>
+
+            <p>
+                While modern development practices introduced flexible alternatives, the Waterfall
+                model remains relevant due to its strict regulatory compliance. For example, it is
+                still used in aerospace, healthcare systems, and government projects, which require
+                its
+                predictability and documentation for clear visibility into timelines and
+                deliverables
+                for a projects flow to shareholders.
+            </p>
+        </article>
+    </section>
+
+    <section class="content-section">
+        <h2>Sample Waterfall Project (Package @faker-js/faker)</h2>
+        <p>
+            <em>Generated using Faker.js Node Package</em>
+        </p>
+        <div class="features">
+            <div class="feature-box">
+                <h4>Project Details</h4>
+                <div class="planet-stats">
+                    <div class="stat">
+                        <strong>Project Name:</strong> <%= projectData.projectName %>
+                    </div>
+                    <div class="stat">
+                        <strong>Project Manager:</strong> <%= projectData.projectManager %>
+                    </div>
+                    <div class="stat">
+                        <strong>Start Date:</strong> <%= projectData.startDate %>
+                    </div>
+                    <div class="stat">
+                        <strong>End Date:</strong> <%= projectData.endDate %>
+                    </div>
+                    <div class="stat">
+                        <strong>Budget:</strong> <%= projectData.budget %>
+                    </div>
+                    <div class="stat">
+                        <strong>Team Size:</strong> <%= projectData.teamSize %> members
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2>Sequential Phases</h2>
+
+        <ol>
+            <li><span class="highlight">Requirements Analysis:</span>
+                This phase produces a detailed specification through gathering and documenting all
+                system
+                requirements. Basically, shareholders influence the design requirements and this is
+                translated towards guiding the entire projects structure.
+            </li>
+
+            <li><span class="highlight">System Design:</span>
+                This phase creates an architectural blueprint over the specified requirements. This
+                is where
+                the designers develop the database, interface, and system architecture diagrams for
+                the
+                project.
+            </li>
+
+            <li><span class="highlight">Implementation:</span>
+                This phase is where developers write code based on the designs specifications. This
+                is where
+                the design would start forming functional software components.
+            </li>
+
+            <li><span class="highlight">Testing:</span>
+                This phase is where everything done so far is checked under quality assurance.
+                Basically,
+                teams of individuals would verify through unit, integration, and system tests
+                that the software meets all the requirements.
+            </li>
+
+            <li><span class="highlight">Deployment:</span>
+                This phase is where the system is officially deployed to the public. The system by
+                this
+                point would be completed and installed within a production environment available to
+                end
+                users.
+            </li>
+
+            <li><span class="highlight">Maintenance:</span>
+                This phase is where the system gets routine checks. Basically, it mostly involved an
+                ongoing support addressing bugs, updates, and minor enhancements to the system after
+                its official deployment.
+            </li>
+        </ol>
+    </section>
+
+    <section class="content-section">
+        <h2>Advantages and Disadvantages</h2>
+
+        <div class="features">
+            <div class="feature-box">
+                <h4>Advantages</h4>
+                <ul>
+                    <li>Clear project structure</li>
+                    <li>Comprehensive documentation</li>
+                    <li>Easy to manage due to defined milestones</li>
+                    <li>Works well for smaller projects</li>
+                    <li>Measurable progress at each phase</li>
+                </ul>
+            </div>
+
+            <div class="feature-box">
+                <h4>Disadvantages</h4>
+                <ul>
+                    <li>Can't change requirements after initial phase</li>
+                    <li>Late testing reveals problems</li>
+                    <li>High risk for complex projects</li>
+                    <li>Working software until final phases</li>
+                    <li>Difficult to estimate time and cost</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2>Best Use Cases</h2>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Scenario</th>
+                <th>Why Waterfall Works</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Regulatory Compliance Projects</td>
+                <td>Comprehensive documentation meets audit requirements</td>
+            </tr>
+            <tr>
+                <td>Fixed-Price Contracts</td>
+                <td>Clear scope and timeline from the beginning</td>
+            </tr>
+            <tr>
+                <td>Well-Understood Domains</td>
+                <td>Requirements reduce the need for flexibility</td>
+            </tr>
+            <tr>
+                <td>Hardware Integration</td>
+                <td>Sequential development aligns with hardware lifecycles</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <details>
+            <summary>Example: Space Systems</summary>
+            <p>
+                Aerospace institutions or companies use the Waterfall methodology frequently.
+                Basically, space missions require software that is rigid in nature due to the
+                impossibility of post-launch modifications. Therefore, the Waterfall model makes
+                this
+                essential due to its meticulously defined requirements, testing, and documentation
+                before
+                delivery.
+            </p>
+        </details>
+    </section>
+</main>
+
+<%- include('partials/footer.ejs') %>
+</body>
+</html>

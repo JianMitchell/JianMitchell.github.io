@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head.ejs') %>
+
+<body>
+<header>
+    <h1>Software Development Life Cycle</h1>
+    <%- include('partials/nav.ejs') %>
+</header>
+
+<main>
+
+    <section class="content-section">
+        <h2>SDLC Resources & Learning Materials</h2>
+    </section>
+
+    <section class="content-section">
+        <h2>Recommended Learning Book (Package @faker-js/faker)</h2>
+        <p>
+            <em>Generated using Faker.js Node Package</em>
+        </p>
+
+        <div class="features">
+            <div class="feature-box">
+                <h4><%= bookData.title %></h4>
+                <div class="planet-stats">
+                    <div class="stat">
+                        <strong>Author:</strong> <%= bookData.author %>
+                    </div>
+                    <div class="stat">
+                        <strong>Publisher:</strong> <%= bookData.publisher %>
+                    </div>
+                    <div class="stat">
+                        <strong>ISBN:</strong> <%= bookData.isbn %>
+                    </div>
+                    <div class="stat">
+                        <strong>Published:</strong> <%= bookData.publishDate %>
+                    </div>
+                    <div class="stat">
+                        <strong>Pages:</strong> <%= bookData.pages %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <% if (article) { %>
+        <section class="content-section">
+            <h2>Latest Programming Article</h2>
+            <p>
+                <em>Fetched from DEV.to API</em>
+            </p>
+
+            <div class="features">
+                <div class="feature-box">
+                    <h4><%= article.title %></h4>
+                    <p><%= article.description || 'Click to read more about this article.' %></p>
+                    <div class="planet-stats">
+                        <div class="stat">
+                            <strong>Author:</strong> <%= article.user.name %>
+                        </div>
+                        <div class="stat">
+                            <strong>Published:</strong> <%= new Date(
+                                    article.published_at).toLocaleDateString() %>
+                        </div>
+                        <div class="stat">
+                            <strong>Reactions:</strong> <%= article.public_reactions_count %>
+                        </div>
+                        <div class="stat">
+                            <strong>Comments:</strong> <%= article.comments_count %>
+                        </div>
+                    </div>
+                    <a href="<%= article.url %>" target="_blank" class="btn"
+                       style="margin-top: 15px;">Read Article</a>
+                </div>
+            </div>
+        </section>
+    <% } %>
+
+</main>
+
+<%- include('partials/footer.ejs') %>
+</body>
+</html>

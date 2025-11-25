@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head.ejs') %>
+
+<body>
+<header>
+    <h1>Software Development Life Cycle</h1>
+    <hr>
+
+    <%- include('partials/nav.ejs') %>
+</header>
+
+<main>
+    <% if (quote) { %>
+        <div class="content-section">
+            <h2>Quote of the Day</h2>
+
+            <blockquote>
+                <em>"<%= quote.quote %>"</em>
+                <cite>- <%= quote.author %></cite>
+            </blockquote>
+
+            <p>
+                <em>Fetched from DummyJSON API</em>
+            </p>
+
+        </div>
+    <% } %>
+
+    <div class="figure">
+        <img src="/img/software-development-life-cycle-diagram.png"
+             alt="Software Development Life Cycle diagram">
+
+        <article class="intro">
+            <h2>Understanding SDLC Methodologies</h2>
+
+            <p>
+                The Software Development Life Cycle (SDLC) represents a structured systematic way of
+                building
+                software systems. Therefore, various methodologies were built on the premise of
+                addressing
+                different needs based on a projects structure, team dynamics, and business
+                requirements
+                to implement software systems efficiently and robustly.
+            </p>
+
+            <p>
+                This website will explore some of the fundamental SDLC methodologies that are
+                currently
+                prevalent today in Computer Science. Each approach offers different ways of handling
+                software systems, while having advantages and disadvantages based on time,
+                efficiency
+                and the approach in the development of software.
+            </p>
+
+            <details>
+                <summary>Why SDLC Matters</summary>
+                <p>
+                    SDLC methodologies are the core frameworks that determine a projects
+                    implementation.
+                    Basically, it effectively determines whether something gets delivered faster or
+                    slower
+                    based on a pre-determined approach on handling software systems. These
+                    established
+                    processes determine the requirements for gathering, designing, implementing,
+                    testing,
+                    and maintaining a projects flow to ensure company expectations.
+                </p>
+            </details>
+        </article>
+    </div>
+
+    <section class="overview">
+        <h2>Explore the Methodologies</h2>
+
+        <div class="card-container">
+            <div class="method-card">
+                <h3>Waterfall</h3>
+                <p>A sequential approach that flows from beginning to end, like a waterfall.</p>
+                <a href="/waterfall" class="btn">Learn More</a>
+            </div>
+
+            <div class="method-card">
+                <h3>Agile</h3>
+                <p>An iterative approach emphasizing teamwork, efficiency, and rapid delivery of
+                    software.</p>
+                <a href="/agile" class="btn">Learn More</a>
+            </div>
+
+            <div class="method-card">
+                <h3>V-Model</h3>
+                <p>An approach combining both verification and validation for quality assurance.</p>
+                <a href="/vmodel" class="btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<%- include('partials/footer.ejs') %>
+</body>
+</html>

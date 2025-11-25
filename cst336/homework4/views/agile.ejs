@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head.ejs') %>
+
+<body>
+<header>
+    <h1>Software Development Life Cycle</h1>
+    <hr>
+
+    <%- include('partials/nav.ejs') %>
+</header>
+
+<main>
+    <section class="content-section">
+        <h2>The Agile Methodology</h2>
+
+        <img src="/img/agile-methodology.png" alt="Agile development cycle">
+
+        <blockquote>
+            <em>"Individuals and interactions over processes and tools. Working software over
+                comprehensive documentation."</em>
+            <cite>— The Agile Manifesto</cite>
+        </blockquote>
+
+        <article class="two-column">
+            <h3>Overview</h3>
+            <p>
+                The Agile methodology emerged within the early 2000s, which was created due to the
+                limitations of the SDLC approaches at that given time period. Therefore, The Agile
+                Manifesto was signed in collaboration with seventeen software developers in 2001,
+                emphasizing and establishing core values such as adaptability, collaboration, and
+                customer satisfaction over rigid planning and documentation.
+            </p>
+
+            <p>
+                Compared to prior approaches that emphasized the implementation of an entire
+                projects plan
+                within its first phase, the Agile model breaks the development into iterations
+                called sprints.
+                Basically, these sprints last between-two-to-four weeks through software increments,
+                which
+                help development teams gather feedback early to readjusted their approach in the
+                usage of the
+                software and its changing requirements.
+            </p>
+
+            <p>
+                The Agile methodology prioritizes face-to-face communication, continuous shareholder
+                engagement, and rapid response to change. Therefore, needing daily meetings, sprint
+                planning sessions, and retrospectives to constantly align teams towards maintaining
+                flexibility. This approach has become the leading methodology in modern software
+                development for web applications, mobile apps, and products that require frequent
+                updates.
+            </p>
+        </article>
+    </section>
+
+    <% if (repos && repos.length > 0) { %>
+        <section class="content-section">
+            <h2>Trending Agile Projects</h2>
+            <p>
+                <em>Fetched from GitHub API</em>
+            </p>
+
+            <div class="features">
+                <% if (repos[0]) { %>
+                    <div class="feature-box">
+                        <h4><%= repos[0].name %></h4>
+                        <p><%= repos[0].description || 'No description available' %></p>
+                        <ul>
+                            <li>Stars: <%= repos[0].stargazers_count.toLocaleString() %></li>
+                            <li>Forks: <%= repos[0].forks_count.toLocaleString() %></li>
+                            <li>Language: <%= repos[0].language || 'N/A' %></li>
+                        </ul>
+                        <a href="<%= repos[0].html_url %>" target="_blank" class="btn"
+                           style="margin-top: 10px;">View on GitHub</a>
+                    </div>
+                <% } %>
+
+                <% if (repos[1]) { %>
+                    <div class="feature-box">
+                        <h4><%= repos[1].name %></h4>
+                        <p><%= repos[1].description || 'No description available' %></p>
+                        <ul>
+                            <li>Stars: <%= repos[1].stargazers_count.toLocaleString() %></li>
+                            <li>Forks: <%= repos[1].forks_count.toLocaleString() %></li>
+                            <li>Language: <%= repos[1].language || 'N/A' %></li>
+                        </ul>
+                        <a href="<%= repos[1].html_url %>" target="_blank" class="btn"
+                           style="margin-top: 10px;">View on GitHub</a>
+                    </div>
+                <% } %>
+            </div>
+        </section>
+    <% } %>
+
+    <section class="content-section">
+        <h2>Agile Frameworks and Practices</h2>
+
+        <div class="features">
+            <div class="feature-box">
+                <h4>Scrum</h4>
+                <p>
+                    This is one of the most popular Agile frameworks, as it provides defined roles
+                    for
+                    development teams, sprints, and ceremonies that would regularly allow for daily
+                    communication, sprint planning, reviews, and retrospectives. In the end, Scrum
+                    provides developers with a well-founded structure, while maintaining
+                    flexibility.
+                </p>
+            </div>
+
+            <div class="feature-box">
+                <h4>Kanban</h4>
+                <p>
+                    This framework is for a visual workflow management system that continuously
+                    delivers
+                    without fixed iterations. Basically, a project manager used to establish
+                    milestones
+                    through work-in-progress limits that prevent bottlenecks in production. In the
+                    end,
+                    Kanban is meant for maximum flexibility for development teams handling various
+                    workloads.
+                </p>
+            </div>
+
+            <div class="feature-box">
+                <h4>Extreme Programming (XP)</h4>
+                <p>
+                    This framework is focused on technical practices derived from test development,
+                    pair
+                    programming, continuous integration, and refactoring. Basically, the very idea
+                    behind
+                    this one is to be not only fluent in development, but excel through disciplined
+                    engineering practices.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2>Key Agile Ceremonies</h2>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Ceremony</th>
+                <th>Duration</th>
+                <th>Purpose</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Daily Communication</td>
+                <td>15 minutes</td>
+                <td>Synchronized team activities</td>
+            </tr>
+            <tr>
+                <td>Sprint Planning</td>
+                <td>2-4 hours</td>
+                <td>Defined sprint goals</td>
+            </tr>
+            <tr>
+                <td>Sprint Review</td>
+                <td>1-2 hours</td>
+                <td>Completed work shared with shareholders</td>
+            </tr>
+            <tr>
+                <td>Sprint Retrospective</td>
+                <td>1-2 hours</td>
+                <td>Reflection on the process and identify improvements</td>
+            </tr>
+            <tr>
+                <td>Backlog Refinement</td>
+                <td>1 hour</td>
+                <td>Clarification on upcoming work items and estimates</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="content-section">
+        <h2>Agile Best Practices</h2>
+
+        <ul>
+            <li><span class="highlight">User Stories:</span>
+                This practice is meant to provide developers a new perspective. Basically, users of
+                their
+                system can voice requirements based on their personal wants and how it would benefit
+                the development of the system in the long run.
+            </li>
+
+            <li><span class="highlight">Definition of Done:</span>
+                This practice is reminiscent of project management systems, as it dictates clear
+                criteria
+                before the work is considered complete, thus ensuring quality standards and
+                requirements.
+            </li>
+
+            <li><span class="highlight">Continuous Integration:</span>
+                This practice helps developers integrate code into repositories like GitHub, which
+                helps
+                automate builds and creates a testing environment for issues early on.
+            </li>
+
+            <li><span class="highlight">Velocity Tracking:</span>
+                This practice is used to measure the teams output through sprints, which is
+                essentially
+                a record of improvement and prediction on future accuracy and capacity.
+            </li>
+
+            <li><span class="highlight">Burndown Charts:</span>
+                This practice is used to provide a visual representation on what work is completed
+                against
+                the amount of time it took to accomplish. Basically, this is mostly used to stay on
+                track
+                during sprints.
+            </li>
+
+            <li><span class="highlight">Product Backlog:</span>
+                This practice prioritizes a list of features, enhancements, and fixes. Basically, a
+                guide
+                that showcases the progression through written files or time stamps on the
+                development of
+                the software.
+            </li>
+        </ul>
+
+        <details>
+            <summary>Example: Agile Transformation</summary>
+            <p>
+                Companies can develop Agile scaling models with autonomous groups organized through
+                guilds.
+                Basically, a squad of developers can operate like a mini-startup with end-to-end
+                responsibility for specific features, which means that each organized group under a
+                certain
+                division/guild, can work on certain structures that can eventually be pieced
+                together like a
+                puzzle for the final system. Therefore, the Agile scaling models emphasize autonomy,
+                alignment,
+                and continuous improvement, providing flexibility and constant improvement.
+            </p>
+        </details>
+    </section>
+
+    <section class="content-section">
+        <h2>When to Use Agile</h2>
+
+        <div class="features">
+            <div class="feature-box">
+                <h4>Ideal For</h4>
+                <ul>
+                    <li>Constantly changing requirements</li>
+                    <li>Collaboration with customers</li>
+                    <li>A Rapidly changing market</li>
+                    <li>Innovative products</li>
+                    <li>Experienced teams</li>
+                </ul>
+            </div>
+
+            <div class="feature-box">
+                <h4>Challenging For</h4>
+                <ul>
+                    <li>Fixed contracts</li>
+                    <li>Distributed teams</li>
+                    <li>Regulatory compliance</li>
+                    <li>Inexperienced teams</li>
+                    <li>Large enterprise systems</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</main>
+
+<%- include('partials/footer.ejs') %>
+</body>
+</html>

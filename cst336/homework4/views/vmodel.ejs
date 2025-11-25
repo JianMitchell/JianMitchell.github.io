@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head.ejs') %>
+
+<body>
+<header>
+    <h1>Software Development Life Cycle</h1>
+    <hr>
+
+    <%- include('partials/nav.ejs') %>
+</header>
+
+<main>
+    <section class="content-section">
+        <h2>The V-Model Methodology</h2>
+
+        <img src="/img/vmodel-methodology.png" alt="V-Model diagram">
+
+        <article class="two-column">
+            <h3>Overview</h3>
+            <p>
+                The V-Model methodology is an extension of the Waterfall methodology, although
+                different
+                due to its emphasis on verification and validation throughout the testing of the
+                development process. Furthermore, to differentiate it from the Waterfall methodology
+                and
+                have it represented by itself, the model is shaped like a V mapping each development
+                phase
+                with the descending left side and testing phase on the ascending right side.
+            </p>
+
+            <p>
+                This methodology was developed in the late 1980s, addressing a major weakness within
+                the
+                Waterfall methodology. Basically, the V-Model introduces testing activities within
+                its
+                early development lifecycle instead of waiting after its implementation. This
+                corresponds
+                to each development stage as well, given that the stages are directly associated
+                with
+                each other. Therefore, this parallel structure helps in verifying and identifying
+                defects
+                earlier as opposed to later on during its development.
+            </p>
+
+            <p>
+                The V-Model emphasizes that testing is an ongoing process in relation to the
+                development of
+                the software system. Therefore, requiring constant analysis of the development
+                before
+                deployment. This approach is used in industries that cannot have systems with
+                serious
+                consequences, such as aerospace, medical devices, automotive systems, and defence
+                applications. In the end, this model is meant to be a rigorous validation method for
+                each
+                phase, while providing a reliable and correct implementation.
+            </p>
+        </article>
+    </section>
+
+    <section class="content-section">
+        <h2>Sample Testing Metrics (Package @faker-js/faker)</h2>
+
+        <p>
+            <em>Generated using Faker.js Node Package</em>
+        </p>
+
+        <div class="features">
+            <div class="feature-box">
+                <h4>Current Testing Session</h4>
+                <ul>
+                    <li><span class="highlight">Lead Tester:</span> <%= testingData.tester %></li>
+                    <li>
+                        <span class="highlight">Total Test Cases:</span> <%= testingData.testCases %>
+                    </li>
+                    <li><span class="highlight">Bugs Found:</span> <%= testingData.bugsFound %></li>
+                    <li>
+                        <span class="highlight">Environment:</span> <%= testingData.testEnvironment %>
+                    </li>
+                    <li>
+                        <span class="highlight">Last Test Date:</span> <%= testingData.lastTestDate %>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2>The V-Model Structure</h2>
+
+        <h3>Descending Phase: Development and Verification</h3>
+        <ol>
+            <li><span class="highlight">Requirements Gathering & System Analysis:</span>
+                This deals with gathering business, requirements, and analysing the testing
+                environment.
+                Basically, it's establishing the foundation for both testing and what is required to
+                accomplish the project.
+            </li>
+
+            <li><span class="highlight">Software Design:</span>
+                This deals with defining the systems architecture/design. Therefore, it goes into
+                software
+                and hardware specifications, while planning out the integration of testing within
+                each
+                component worked on.
+            </li>
+
+            <li><span class="highlight">Module Design:</span>
+                This deals with the modular design of the system, which defines the interfaces
+                between
+                components. Furthermore, it's integrated into testing plans alongside the
+                development
+                of the architectural design.
+            </li>
+
+            <li><span class="highlight">Implementation/Coding:</span>
+                This deals with the writing of the actual code, which is implemented at the bottom
+                of the
+                V, which then transitions to testing.
+            </li>
+        </ol>
+
+        <h3>Ascending Phase: Testing and Validation</h3>
+        <ol start="6">
+            <li><span class="highlight">Unit Testing:</span>
+                This is when testing individual modules or components takes place. Basically, unit
+                testing
+                is to verify if everything functions correctly according to the specifications, thus
+                preventing
+                any defects from happening.
+            </li>
+
+            <li><span class="highlight">Integration Testing:</span>
+                This is when modules are verified if they are working together. Basically,
+                integration testing
+                is used for interfaces and interactions defined during the module design.
+            </li>
+
+            <li><span class="highlight">System Testing:</span>
+                This is when the integrated system is tested for design specification. Basically,
+                this test
+                is used to determine the performance, security, and reliability of the software.
+            </li>
+
+            <li><span class="highlight">Acceptance Testing:</span>
+                This is when the system is tested for business requirements. Basically, this test is
+                used
+                to determine if it meets all the needs of both users and clients before deployment.
+            </li>
+        </ol>
+    </section>
+
+    <section class="content-section">
+        <h2>Testing Levels and Objectives</h2>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Testing Level</th>
+                <th>Corresponds To</th>
+                <th>Primary Objective</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Unit Testing</td>
+                <td>Module Design</td>
+                <td>Verifies individual components</td>
+            </tr>
+            <tr>
+                <td>Integration Testing</td>
+                <td>Software Design</td>
+                <td>Verifies modules interaction</td>
+            </tr>
+            <tr>
+                <td>System Testing</td>
+                <td>System Analysis</td>
+                <td>Verifies system specifications</td>
+            </tr>
+            <tr>
+                <td>Acceptance Testing</td>
+                <td>Requirements Gathering</td>
+                <td>Validates system requirements</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="content-section">
+        <h2>Advantages and Disadvantages</h2>
+
+        <div class="features">
+            <div class="feature-box">
+                <h4>Advantages</h4>
+                <ul>
+                    <li>Early defect detection</li>
+                    <li>Clear testing objectives</li>
+                    <li>High quality and reliability</li>
+                    <li>Disciplined and systematic</li>
+                    <li>Easy to implement</li>
+                    <li>Each phase has specific deliverables</li>
+                </ul>
+            </div>
+
+            <div class="feature-box">
+                <h4>Disadvantages</h4>
+                <ul>
+                    <li>Inflexible requirements</li>
+                    <li>Software isn't fully implemented until later</li>
+                    <li>It's not suitable for complex projects</li>
+                    <li>Risky for long-term projects</li>
+                    <li>Extensive documentation</li>
+                    <li>Testing delays</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</main>
+
+<%- include('partials/footer.ejs') %>
+</body>
+</html>
