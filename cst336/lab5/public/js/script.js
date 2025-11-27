@@ -9,11 +9,6 @@ async function getAuthorInfo() {
   myModal.show();
 
   try {
-
-  } catch (error) {
-    console.error("Error fetching author info:", error);
-    document.getElementById('authorInfo').innerHTML = "Error loading author information.";
-  }
   let url = `/api/author/${this.id}`;
   let response = await fetch(url);
   let data = await response.json();
@@ -30,4 +25,8 @@ async function getAuthorInfo() {
             <strong>Country:</strong> ${data[0].country || 'N/A'}<br>
             <strong>Biography:</strong> ${data[0].biography || 'N/A'}`;
   authorInfo.innerHTML += `<img src="${data[0].portrait}" width="200"> <br>`;
+  } catch (error) {
+    console.error("Error fetching author info:", error);
+    document.getElementById('authorInfo').innerHTML = "Error loading author information.";
+  }
 }
