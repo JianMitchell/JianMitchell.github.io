@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("partials/header.ejs") %>
+
+<body>
+
+
+<h1> Quote Finder </h1>
+<form action="/searchByKeyword">
+    Keyword:
+    <input type="text" name="keyword">
+    <button>Search by Keyword</button>
+</form>
+
+<br>
+
+<form action="/searchByAuthor">
+    <select name="authorId">
+        <% for (author of authors) { %>
+            <option value="<%= author.authorId %>">
+                <%= author.firstName %> <%= author.lastName %>
+            </option>
+        <% } %>
+    </select>
+    <button>Search by Author</button>
+</form>
+
+
+
+<%- include("partials/footer.ejs") %>
+
+<script src="/js/script.js"></script>
+</body>
+</html>
