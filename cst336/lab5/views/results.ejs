@@ -8,9 +8,9 @@
 <div class="container mt-5">
     <h1 class="text-center mb-4">Quotes Found</h1>
 
-    <div class="text-center mb-4">
+    <nav class="text-center mb-4">
         <a href="/" class="btn btn-secondary">Back to Search</a>
-    </div>
+    </nav>
 
     <% if (quotes.length === 0) { %>
         <div class="alert alert-info text-center">
@@ -27,7 +27,7 @@
                         </p>
                         <p class="text-end mb-0">
                             <em>-
-                                <a href="#" id="<%= i.authorId %>">
+                                <a href="#" class="author-link" id="<%= i.authorId %>">
                                     <%= i.firstName %> <%= i.lastName %>
                                 </a>
                             </em>
