@@ -8,7 +8,6 @@ async function getAuthorInfo() {
   let myModal = new bootstrap.Modal(document.getElementById('authorModal'));
   myModal.show();
 
-  try {
   let url = `/api/author/${this.id}`;
   let response = await fetch(url);
   let data = await response.json();
@@ -25,8 +24,4 @@ async function getAuthorInfo() {
             <strong>Country:</strong> ${data[0].country || 'N/A'}<br>
             <strong>Biography:</strong> ${data[0].biography || 'N/A'}<br>`;
   authorInfo.innerHTML += `<img src="${data[0].portrait}" width="200"> <br>`;
-  } catch (error) {
-    console.error("Error fetching author info:", error);
-    document.getElementById('authorInfo').innerHTML = "Error loading author information.";
-  }
 }
