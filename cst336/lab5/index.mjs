@@ -22,14 +22,21 @@ const pool = mysql.createPool({
 //routes
 app.get('/', async(req, res) => {
   try {
-    let sql = `SELECT authorId, firstName, lastName
+    let authorSql = `SELECT authorId, firstName, lastName
                     FROM q_authors
                     ORDER BY lastName`;
-    const [rows] = await pool.query(sql);
-    res.render('index', {authors:rows});
+    const [rows] = await pool.query(authorSql);
+
+    let categoriesSql = `SELECT DISTINCT category
+                    FROM q_quotes
+                    WHERE category IS NOT NULL 
+                    ORDER BY category`;
+    const [categories]  = await pool.query(categoriesSql);
+
+    res.render('index', {authors:rows, categories:categories});
   } catch (error) {
    console.error("Error fetching authors", error);
-   res.render('index', {authors:[]});
+   res.render('index', {authors:[], categories:[]});
   }
 });
 
@@ -73,6 +80,41 @@ app.get('/searchByAuthor', async(req, res) => {
     res.render("results", {quotes:rows});
   } catch (error) {
     console.error("Error searching by author:", error);
+    res.render('results', {quotes:[]});
+  }
+});
+
+app.get('/searchByCategory', async(req,  res) => {
+  let category = req.query.category;
+
+  try {
+    let sql = `SELECT authorId, firstName, lastName, quote
+                    FROM q_quotes
+                    NATURAL JOIN q_authors
+                    WHERE category = ?`;
+    let sqlParams = [category];
+    const [rows] = await pool.query(sql, sqlParams);
+    res.render('results', {quotes:rows});
+  } catch (error) {
+    console.error("Error searching by category:", error);
+    res.render('results', {quotes:[]});
+  }
+});
+
+app.get('/searchByLikes', async(req, res) => {
+  let minLikes = req.query.minLikes || 0;
+  let maxLikes = req.query.maxLikes || 999999;
+
+  try {
+    let sql = `SELECT authorId, firstName, lastName, quote
+                    FROM q_quotes
+                    NATURAL JOIN q_authors
+                    WHERE likes BETWEEN ? AND ?`;
+    let sqlParams = [minLikes, maxLikes];
+    const [rows] = await pool.query(sql, sqlParams);
+    res.render('results', {quotes:rows});
+  } catch (error) {
+    console.error("Error searching by likes:", error);
     res.render('results', {quotes:[]});
   }
 });

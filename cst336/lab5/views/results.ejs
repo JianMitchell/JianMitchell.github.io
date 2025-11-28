@@ -5,22 +5,43 @@
 
 <body>
 
-<h1> Quotes Found </h1>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Quotes Found</h1>
 
-<% for (i of quotes) { %>
-    <%= i.quote %> <br>
-    -<em>
-        <a href="#" id="<%= i.authorId %>">
-            <%= i.firstName %> <%= i.lastName %>
-        </a>
-    </em>
+    <div class="text-center mb-4">
+        <a href="/" class="btn btn-secondary">Back to Search</a>
+    </div>
 
-    <br><br>
-<% } %>
+    <% if (quotes.length === 0) { %>
+        <div class="alert alert-info text-center">
+            <h4>No quotes found</h4>
+            <p>Try a different search term or browse all quotes.</p>
+        </div>
+    <% } else { %>
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <% for (i of quotes) { %>
+                    <div class="quote-item">
+                        <p class="mb-2" style="font-size: 1.1rem; line-height: 1.6;">
+                            "<%= i.quote %>"
+                        </p>
+                        <p class="text-end mb-0">
+                            <em>-
+                                <a href="#" id="<%= i.authorId %>">
+                                    <%= i.firstName %> <%= i.lastName %>
+                                </a>
+                            </em>
+                        </p>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    <% } %>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="authorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Author Information</h1>

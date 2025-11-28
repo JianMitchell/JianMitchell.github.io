@@ -6,27 +6,101 @@
 <body>
 
 
-<h1> Quote Finder </h1>
-<form action="/searchByKeyword">
-    Keyword:
-    <input type="text" name="keyword">
-    <button>Search by Keyword</button>
-</form>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Quote Finder</h1>
 
-<br>
+    <div class="row">
+        <!-- Search by Keyword -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Search by Keyword</h5>
+                </div>
+                <div class="card-body">
+                    <form action="/searchByKeyword">
+                        <div class="mb-3">
+                            <label for="keyword" class="form-label">Enter keyword:</label>
+                            <input type="text" class="form-control" name="keyword" id="keyword" required>
+                        </div>
+                        <button class="btn btn-primary w-100">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
 
-<form action="/searchByAuthor">
-    <select name="authorId">
-        <% for (author of authors) { %>
-            <option value="<%= author.authorId %>">
-                <%= author.firstName %> <%= author.lastName %>
-            </option>
-        <% } %>
-    </select>
-    <button>Search by Author</button>
-</form>
+        <!-- Search by Author -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0">Search by Author</h5>
+                </div>
+                <div class="card-body">
+                    <form action="/searchByAuthor">
+                        <div class="mb-3">
+                            <label for="authorId" class="form-label">Select author:</label>
+                            <select name="authorId" id="authorId" class="form-select" required>
+                                <option value="">-- Choose an author --</option>
+                                <% for (author of authors) { %>
+                                    <option value="<%= author.authorId %>">
+                                        <%= author.firstName %> <%= author.lastName %>
+                                    </option>
+                                <% } %>
+                            </select>
+                        </div>
+                        <button class="btn btn-success w-100">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
 
+        <!-- Search by Category -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0">Search by Category</h5>
+                </div>
+                <div class="card-body">
+                    <form action="/searchByCategory">
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Select category:</label>
+                            <select name="category" id="category" class="form-select" required>
+                                <option value="">-- Choose a category --</option>
+                                <% for (cat of categories) { %>
+                                    <option value="<%= cat.category %>">
+                                        <%= cat.category %>
+                                    </option>
+                                <% } %>
+                            </select>
+                        </div>
+                        <button class="btn btn-info w-100">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
 
+        <!-- Search by Likes Range -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header bg-warning text-dark">
+                    <h5 class="mb-0">Search by Likes Range</h5>
+                </div>
+                <div class="card-body">
+                    <form action="/searchByLikes">
+                        <div class="mb-3">
+                            <label for="minLikes" class="form-label">Minimum likes:</label>
+                            <input type="number" class="form-control" name="minLikes" id="minLikes" min="0" value="0">
+                        </div>
+                        <div class="mb-3">
+                            <label for="maxLikes" class="form-label">Maximum likes:</label>
+                            <input type="number" class="form-control" name="maxLikes" id="maxLikes" min="0" value="1000">
+                        </div>
+                        <button class="btn btn-warning w-100">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <%- include("partials/footer.ejs") %>
 

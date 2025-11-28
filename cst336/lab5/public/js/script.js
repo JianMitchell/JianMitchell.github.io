@@ -23,7 +23,7 @@ async function getAuthorInfo() {
             <strong>Sex:</strong> ${data[0].sex || 'N/A'}<br>
             <strong>Profession:</strong> ${data[0].profession || 'N/A'}<br>
             <strong>Country:</strong> ${data[0].country || 'N/A'}<br>
-            <strong>Biography:</strong> ${data[0].biography || 'N/A'}`;
+            <strong>Biography:</strong> ${data[0].biography || 'N/A'}<br>`;
   authorInfo.innerHTML += `<img src="${data[0].portrait}" width="200"> <br>`;
   } catch (error) {
     console.error("Error fetching author info:", error);
