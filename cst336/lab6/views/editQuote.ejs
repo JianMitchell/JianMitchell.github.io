@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/header.ejs') %>
+
+<body>
+
+<div class="container">
+    <h1>Updating Quote Data</h1>
+
+    <form method="POST" action="/quote/edit" class="form">
+        <input type="hidden" name="quoteId" value="<%= quoteInfo[0].quoteId %>">
+
+        <div class="form-group">
+            <label for="quote">Quote:</label>
+            <textarea id="quote" name="quote" rows="4" required><%= quoteInfo[0].quote %></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="authorId">Author:</label>
+            <select id="authorId" name="authorId" required>
+                <% for (let i = 0; i < authors.length; i++) { %>
+                    <option value="<%= authors[i].authorId %>"
+                    <% if (authors[i].authorId == quoteInfo[0].authorId) { %> selected <% } %>>
+                        <%= authors[i].firstName %> <%= authors[i].lastName %>
+                    </option>
+                <% } %>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="category">Category:</label>
+            <select id="category" name="category">
+                <option value="">-- Select a Category --</option>
+                <% for (let i = 0; i < categories.length; i++) { %>
+                    <option value="<%= categories[i].category %>"
+                    <% if (categories[i].category == quoteInfo[0].category) { %> selected <% } %>>
+                        <%= categories[i].category %>
+                    </option>
+                <% } %>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="likes">Likes:</label>
+            <input type="number" id="likes" name="likes"
+                   value="<%= quoteInfo[0].likes || 0 %>" min="0">
+        </div>
+
+        <button type="submit" class="button button-main">Update Quote</button>
+        <a href="/quotes" class="button button-neutral">Cancel</a>
+    </form>
+</div>
+
+<%- include('partials/footer.ejs') %>
+
+<script src="/js/script.js"></script>
+</body>
+</html>

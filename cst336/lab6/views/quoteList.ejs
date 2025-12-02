@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/header.ejs') %>
+
+<body>
+
+<div class="container">
+    <h1>Update/Delete Quotes</h1>
+
+    <div class="list">
+        <% for (let i = 0; i < quotes.length; i++) { %>
+            <div class="list-item">
+                <div>
+                    <p class="quote-text">"<%= quotes[i].quote %>"</p>
+                    <p class="quote-author">
+                        - <%= quotes[i].firstName %> <%= quotes[i].lastName %>
+                        <% if (quotes[i].category) { %>
+                            | Category: <%= quotes[i].category %>
+                        <% } %>
+                        | Likes: <%= quotes[i].likes %>
+                    </p>
+                </div>
+                <div class="actions">
+                    <a href="/quote/edit?quoteId=<%= quotes[i].quoteId %>" class="button button-update">UPDATE</a>
+                    <a href="/quote/delete?quoteId=<%= quotes[i].quoteId %>"
+                       class="button button-remove"
+                       onclick="return confirm('Are you sure you want to delete this quote?')">DELETE</a>
+                </div>
+            </div>
+        <% } %>
+    </div>
+
+    <a href="/" class="button button-neutral">Back to Home</a>
+</div>
+
+<%- include('partials/footer.ejs') %>
+
+<script src="/js/script.js"></script>
+</body>
+</html>

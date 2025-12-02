@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/header.ejs') %>
+
+<body>
+
+<div class="container">
+    <h1>Updating Author Data</h1>
+
+    <form method="POST" action="/author/edit" class="form">
+        <input type="hidden" name="authorId" value="<%= authorInfo[0].authorId %>">
+
+        <div class="form-group">
+            <label for="fName">First Name:</label>
+            <input type="text" id="fName" name="fName" value="<%= authorInfo[0].firstName %>" required>
+        </div>
+
+        <div class="form-group">
+            <label for="lName">Last Name:</label>
+            <input type="text" id="lName" name="lName" value="<%= authorInfo[0].lastName %>" required>
+        </div>
+
+        <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" value="<%= authorInfo[0].dobISO %>" required>
+        </div>
+
+        <div class="form-group">
+            <label for="dod">Date of Death:</label>
+            <input type="date" id="dod" name="dod" value="<%= authorInfo[0].dodISO %>" required>
+        </div>
+
+        <div class="form-group">
+            <label>Sex:</label>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="sex" value="M"
+                    <% if (authorInfo[0].sex == "M") { %> checked <% } %>> Male
+                </label>
+                <label>
+                    <input type="radio" name="sex" value="F"
+                    <% if (authorInfo[0].sex == "F") { %> checked <% } %>> Female
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="profession">Profession:</label>
+            <input type="text" id="profession" name="profession"
+                   value="<%= authorInfo[0].profession || '' %>">
+        </div>
+
+        <div class="form-group">
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country"
+                   value="<%= authorInfo[0].country || '' %>">
+        </div>
+
+        <div class="form-group">
+            <label for="portrait">Portrait URL:</label>
+            <input type="text" id="portrait" name="portrait"
+                   value="<%= authorInfo[0].portrait || '' %>">
+        </div>
+
+        <div class="form-group">
+            <label for="biography">Biography:</label>
+            <textarea id="biography" name="biography" rows="5"><%= authorInfo[0].biography || '' %></textarea>
+        </div>
+
+        <button type="submit" class="button button-main">Update Author</button>
+        <a href="/authors" class="button button-neutral">Cancel</a>
+    </form>
+</div>
+
+<%- include('partials/footer.ejs') %>
+
+<script src="/js/script.js"></script>
+</body>
+</html>

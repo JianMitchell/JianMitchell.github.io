@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/header.ejs') %>
+
+<body>
+
+
+<div class="container">
+    <h1>Update/Delete Authors</h1>
+
+    <div class="list">
+        <% for (let i = 0; i < authors.length; i++) { %>
+            <div class="list-item">
+                    <span class="author-name">
+                        <%= authors[i].firstName %> <%= authors[i].lastName %>
+                    </span>
+                <div class="actions">
+                    <a href="/author/edit?authorId=<%= authors[i].authorId %>" class="button button-update">UPDATE</a>
+                    <a href="/author/delete?authorId=<%= authors[i].authorId %>"
+                       class="button button-remove"
+                       onclick="return confirm('Are you sure you want to delete this author?')">DELETE</a>
+                </div>
+            </div>
+        <% } %>
+    </div>
+
+    <a href="/" class="button button-neutral">Back to Home</a>
+</div>
+
+<%- include('partials/footer.ejs') %>
+
+<script src="/js/script.js"></script>
+</body>
+</html>

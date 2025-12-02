@@ -1,0 +1,143 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f5f5f5;
+}
+
+footer {
+  text-align: center;
+}
+
+footer {
+  padding: 30px 20px;
+  background-color: #ffffff;
+  font-size: 0.9em;
+  color: black;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.message {
+  background: #d4edda;
+  color: #155724;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #c3e6cb;
+}
+
+/* Buttons */
+.button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.button-main {
+  background: #007bff;
+  color: white;
+}
+
+.button-neutral {
+  background: #6c757d;
+  color: white;
+}
+
+.button-update {
+  background: #ffc107;
+  color: black;
+}
+
+.button-remove {
+  background: #dc3545;
+  color: white;
+}
+
+/* Home page buttons */
+.button-grid {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.button-grid form {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.button-grid button {
+  width: 200px;
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+.radio-group label {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+/* Lists */
+.list {
+  margin: 20px 0;
+}
+
+.list-item {
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+}
+
+.author-name {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.quote-text {
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.quote-author {
+  font-size: 14px;
+  color: #666;
+}
+
+.actions {
+  margin-top: 10px;
+}

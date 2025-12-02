@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/header.ejs') %>
+
+<body>
+
+<div class="container">
+    <h1>Adding a New Quote</h1>
+
+    <% if (typeof message != "undefined") { %>
+        <div class="message"><%= message %></div>
+    <% } %>
+
+    <form method="POST" action="/quote/new" class="form">
+        <div class="form-group">
+            <label for="quote">Quote:</label>
+            <textarea id="quote" name="quote" rows="4" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="authorId">Author:</label>
+            <select id="authorId" name="authorId" required>
+                <option value="">-- Select an Author --</option>
+                <% for (let i = 0; i < authors.length; i++) { %>
+                    <option value="<%= authors[i].authorId %>">
+                        <%= authors[i].firstName %> <%= authors[i].lastName %>
+                    </option>
+                <% } %>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="category">Category:</label>
+            <select id="category" name="category">
+                <option value="">-- Select a Category --</option>
+                <% for (let i = 0; i < categories.length; i++) { %>
+                    <option value="<%= categories[i].category %>">
+                        <%= categories[i].category %>
+                    </option>
+                <% } %>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="likes">Likes:</label>
+            <input type="number" id="likes" name="likes" value="0" min="0">
+        </div>
+
+        <button type="submit" class="button button-main">Add Quote</button>
+        <a href="/" class="button button-neutral">Back to Home</a>
+    </form>
+</div>
+
+<%- include('partials/footer.ejs') %>
+
+<script src="/js/script.js"></script>
+</body>
+</html>

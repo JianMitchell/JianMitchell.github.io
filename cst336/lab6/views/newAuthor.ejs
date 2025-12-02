@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/header.ejs') %>
+<body>
+
+<div class="container">
+    <h1>Adding a New Author</h1>
+
+    <% if (typeof message != "undefined") { %>
+        <div class="message"><%= message %></div>
+    <% } %>
+
+    <form method="POST" action="/author/new" class="form">
+        <div class="form-group">
+            <label for="fName">First Name:</label>
+            <input type="text" id="fName" name="fName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="lName">Last Name:</label>
+            <input type="text" id="lName" name="lName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+
+        <div class="form-group">
+            <label for="dod">Date of Death:</label>
+            <input type="date" id="dod" name="dod" required>
+        </div>
+
+        <div class="form-group">
+            <label>Sex:</label>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="sex" value="M" required> Male
+                </label>
+                <label>
+                    <input type="radio" name="sex" value="F" required> Female
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="profession">Profession:</label>
+            <input type="text" id="profession" name="profession">
+        </div>
+
+        <div class="form-group">
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country">
+        </div>
+
+        <div class="form-group">
+            <label for="portrait">Portrait URL:</label>
+            <input type="text" id="portrait" name="portrait">
+        </div>
+
+        <div class="form-group">
+            <label for="biography">Biography:</label>
+            <textarea id="biography" name="biography" rows="5"></textarea>
+        </div>
+
+        <button type="submit" class="button button-main">Add Author</button>
+        <a href="/" class="button button-neutral">Back to Home</a>
+    </form>
+</div>
+
+<%- include('partials/footer.ejs') %>
+
+<script src="/js/script.js"></script>
+</body>
+</html>
